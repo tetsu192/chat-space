@@ -3,6 +3,8 @@
   DB設計
 
   users table
+
+
   | Column     | Type        | Option       |
   |:-----------|------------:|:------------:|
   | id         | integer     | null:false   |
@@ -16,6 +18,8 @@
   * has_many  :members
 
   messages table
+
+
   | Column     | Type        | Option       |
   |:-----------|------------:|:------------:|
   | id         | integer     | null:false   |
@@ -28,6 +32,8 @@
   *belongs_to :user
 
   groups table
+
+
   | Column     | Type        | Option       |
   |:-----------|------------:|:------------:|
   | id         | integer     | null:false   |
@@ -38,6 +44,8 @@
   * has_meny :members
 
   members table
+
+
   | Column     | Type        | Option       |
   |:-----------|------------:|:------------:|
   | id         | integer     | null:false   |
