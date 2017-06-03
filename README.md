@@ -26,7 +26,6 @@
   | text       | text        |              |
   | image      | text        |              |
   | user_id    | integer     |              |
-  | left       | right       | center       |
 
   assosiation
   *belongs_to :user
@@ -49,8 +48,8 @@
   | Column     | Type        | Option       |
   |:-----------|------------:|:------------:|
   | id         | integer     | null:false   |
-  | group_id   | integer     |              |
-  | user_id    | integer     |              |
+  | group_id   | references  |              |
+  | user_id    | references  |              |
 
   assosiation
   * belongs_to user
