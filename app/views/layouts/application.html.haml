@@ -3,10 +3,9 @@
   %head
     %meta{ content: "text/html; charset=UTF-8", http: { equiv: "Content-Type" } }/
     %title ChatSpace
-    = stylesheet_link_tag    'application', media: 'all', data: { turbolinks: { track: true } }
+    = stylesheet_link_tag  'application', media: 'all', data: { turbolinks: { track: true } }
     = javascript_include_tag 'application', data: {turbolinks: { track: true } }
     = csrf_meta_tags
-
   %body
     .notification
       %p  チャットグループが作成されました。
@@ -51,7 +50,7 @@
             .lower-message
               %p.lower-message__content aaaaaaaa
         .form
-          %input.form__message{type: "text" , placeholder: "type a message"}
+          %input.form__message{type: 'text' , placeholder: 'type a message'}
           .form__mask
             %i.fa.fa-picture-o.icon
-          %input.form__submit{type: "submit" , value: "Send"}
+          %input.form__submit{type: 'submit' , value: 'Send'}
