@@ -1,0 +1,63 @@
+!!!
+%html
+  %head
+<<<<<<< HEAD
+    %meta{ content: 'text/html; charset=UTF-8', http: { equiv: 'Content-Type' } }/
+    %title ChatSpace
+    = stylesheet_link_tag  'application', media: 'all', data: { turbolinks: { track: true } }
+    = javascript_include_tag 'application', data: {turbolinks: { track: true } }
+=======
+    %meta{ content: "text/html; charset=UTF-8", http: {equiv:content }/
+    %title ChatSpace
+    = stylesheet_link_tag    'application', media: 'all', data: { turbolinks: { track: true }}
+    = javascript_include_tag 'application', data: { turbolinks:{ track: true }}
+>>>>>>> origin/master
+    = csrf_meta_tags
+  %body
+    .notification
+      %p  チャットグループが作成されました。
+    .wrapper
+      .side-bar
+        .header
+          %h3.header__name
+            ttt
+          %ul.header__lists
+            %li.list
+              %i.fa.fa-cog.icon
+            %li.list
+              %i.fa.fa-pencil-square-o.icon
+        .groups
+          .group
+            .group__name
+              aaa
+            .group__message
+              aaaaaaaa
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
+      .chat
+        .header
+          .left-header
+            .left-header__title
+              aaa
+            %ul.left-header__members
+              Member：
+              %li.member
+                ttt
+          .right-header
+            %a.right-header__button
+              Edit
+        .messages.js-messages
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+        .form
+          %input.form__message{type: 'text' , placeholder: 'type a message'}
+          .form__mask
+            %i.fa.fa-picture-o.icon
+          %input.form__submit{type: 'submit' , value: 'Send'}
