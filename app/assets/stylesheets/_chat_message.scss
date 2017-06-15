@@ -1,28 +1,32 @@
+@import 'variables';
 .chat {
-  width: calc(100% - 300px);
+  width: calc(100vw - 300px);
   .header {
-    background-color: white;
+    background-color: $chat__header-color;
+    -webkit-height: 100px;
     height: 100px;
     padding: 0 40px;
-    border: #eeeeee;
+    border: $chat-border-color;
     .left-header {
       margin: 35px 0 15px 0;
       display: inline-block;
       &__title {
+        -webkit-font-size: 20px;
         font-size: 20px;
-        color: #333333;
+        color: $title-color;
         margin-bottom: 15px;
       }
-      ul {
+      ul.left-header__members {
+        -webkit-font-size: 12px;
         font-size: 12px;
-        color: #999999;
+        color: $member-or-date-color;
         li {
           display: inline-block;
         }
       }
     }
     .right-header {
-      border: 1px solid #38AEF0;
+      border: 1px solid $btn-color;
       color: #38AEF0;
       float: right;
       height: 40px;
@@ -30,37 +34,40 @@
       margin-top: 28px;
       padding: 0 20px;
       &__button {
-        border-color: #38AEF0;
+        border-color: $btn-color;
       }
     }
   }
   .messages{
-    background-color: #FAFAFA;
+    background-color: $messages-color;
     height: calc(100vh - 190px);
     padding: 0 40px;
     .message {
       padding: 46px 0 10px 0;
-
       .upper-message {
         &__user-name {
           display: inline-block;
+          -webkit-font-size: 16px;
           font-size: 16px;
           font-weight: bold;
-          color: #434A54;
+          color: $user-name-message-color;
           margin-right: 10px;
         }
         &__date {
           display: inline-block;
+          -webkit-font-size: 12px;
           font-size: 12px;
-          color: #999999;
+          color: $member-or-date-color;
           margin-bottom: 10px;
         }
         p {
+          -webkit-font-size: 14px;
           font-size: 14px;
-          color: #434A54;
+          color: $user-name-message-color;
         }
       }
       .lower-message {
+        -webkit-font-size: 14px;
         font-size: 14px;
       }
     }
