@@ -1,17 +1,21 @@
+@import 'variables';
 .side-bar {
   width: 300px;
-  height: 100%;
+  height: 100vh;
   float: left;
   .header {
-    background-color: #253141;
+    background-color: $side-bar__header-color;
+    -webkit-height: 100px;
     height: 100px;
     padding: 0 20px;
+    -webkit-line-height: 100px;
     line-height: 100px;
     &__name {
       display: inline-block;
+      -webkit-font-size: 16px;
       font-size: 16px;
       font-weight: bold;
-      color: #fff;
+      color: $word-white;
     }
     &__lists {
       display: inline-block;
@@ -20,7 +24,8 @@
         display: inline-block;
       }
       .icon {
-        color: #fff;
+        color: $word-white;
+        -webkit-font-size: 16px;
         font-size: 16px;
         margin-left: 5px;
       }
@@ -31,17 +36,19 @@
     }
   }
   .groups {
-    background-color: #2f3e51;
+    background-color: $groups-color;
     height: 100vh;
     padding: 0 20px;
     .group {
-      color: white;
+      color: $word-white;
       padding: 20px 0 40px;
       &__name {
+        -webkit-font-size: 15px;
         font-size: 15px;
         margin-bottom: 5px;
       }
       &__message {
+        -webkit-font-size: 11px;
         font-size: 11px;
       }
     }
