@@ -37,8 +37,11 @@
   }
   .groups {
     background-color: $groups-color;
-    height: 100vh;
+    -webkit-height: calc(100vh - 100px);
+    height: calc(100vh - 100px);
     padding: 0 20px;
+    -webkit-overflow: scroll;
+    overflow: scroll;
     .group {
       color: $word-white;
       padding: 20px 0 40px;

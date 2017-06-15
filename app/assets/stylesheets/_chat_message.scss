@@ -1,5 +1,6 @@
 @import 'variables';
 .chat {
+  -webkit-width: calc(100vw - 300px);
   width: calc(100vw - 300px);
   .header {
     background-color: $chat__header-color;
@@ -40,8 +41,10 @@
   }
   .messages{
     background-color: $messages-color;
+    -webkit-height: calc(100vh - 190px);
     height: calc(100vh - 190px);
     padding: 0 40px;
+    overflow: scroll;
     .message {
       padding: 46px 0 10px 0;
       .upper-message {

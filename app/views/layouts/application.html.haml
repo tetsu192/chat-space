@@ -30,6 +30,36 @@
               a
             .group__message
               まだメッセージはありません。
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
       .chat
         .header
           .left-header
@@ -49,8 +79,51 @@
               .upper-message__date 2017/06/02 04:30
             .lower-message
               %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+          .message
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
         .form
-          %input.form__message{type: 'text' , placeholder: 'type a message'}
+          = form_tag do
+            %input.form__message{ type: 'text' , placeholder: 'type a message' }
           .form__mask
             %i.fa.fa-picture-o.icon
-          %input.form__submit{type: 'submit' , value: 'Send'}
+          = button_tag 'Send' , class: 'form__btn-submit' , type: :submit
