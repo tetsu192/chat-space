@@ -1,9 +1,8 @@
-@import 'variables';
 .chat {
   -webkit-width: calc(100vw - 300px);
   width: calc(100vw - 300px);
   .header {
-    background-color: $chat__header-color;
+    background-color: $chat_header-color;
     -webkit-height: 100px;
     height: 100px;
     padding: 0 40px;
@@ -28,7 +27,7 @@
     }
     .right-header {
       border: 1px solid $btn-color;
-      color: #38AEF0;
+      color: $btn-color;
       float: right;
       height: 40px;
       line-height: 40px;
@@ -39,15 +38,15 @@
       }
     }
   }
-  .messages{
+  .messages {
     background-color: $messages-color;
     -webkit-height: calc(100vh - 190px);
     height: calc(100vh - 190px);
     padding: 0 40px;
     overflow: scroll;
-    .message {
+    &__message {
       padding: 46px 0 10px 0;
-      .upper-message {
+      .info {
         &__user-name {
           display: inline-block;
           -webkit-font-size: 16px;
@@ -69,11 +68,10 @@
           color: $user-name-message-color;
         }
       }
-      .lower-message {
+      .text {
         -webkit-font-size: 14px;
         font-size: 14px;
       }
     }
   }
 }
-

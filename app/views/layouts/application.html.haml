@@ -5,7 +5,7 @@
     %title ChatSpace
     = stylesheet_link_tag  'application', media: 'all', data: { turbolinks: { track: true } }
     = javascript_include_tag 'application', data: {turbolinks: { track: true } }
-    %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
+    %link{ href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}
   %body
     .notification
       %p  チャットグループが作成されました。
@@ -25,41 +25,6 @@
               aaa
             .group__message
               aaaaaaaa
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
-          .group
-            .group__name
-              a
-            .group__message
-              まだメッセージはありません。
       .chat
         .header
           .left-header
@@ -72,55 +37,13 @@
           .right-header
             %a.right-header__button
               Edit
-        .messages.js-messages
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
-          .message
-            .upper-message
-              .upper-message__user-name ttt
-              .upper-message__date 2017/06/02 04:30
-            .lower-message
-              %p.lower-message__content aaaaaaaa
+        .messages
+          .messages__message
+            .info
+              .info__user-name ttt
+              .info__date 2017/06/02 04:30
+            .text
+              %p.text__content aaaaaaaa
         .form
           = form_tag do
             %input.form__message{ type: 'text' , placeholder: 'type a message' }
