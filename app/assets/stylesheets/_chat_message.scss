@@ -1,9 +1,10 @@
-  .messages {
+.chat{
+  &__messages {
     background-color: $messages-color;
     @include messages_height;
     padding: 0 40px;
     overflow: scroll;
-    &__message {
+    .message {
       padding: 46px 0 10px 0;
       .info {
         margin-bottom: 10px;
@@ -25,3 +26,4 @@
       }
     }
   }
+}
