@@ -1,4 +1,4 @@
-.chat{
+.chat {
   @include chat_width;
   &__header {
     background-color: $chat_header-color;
@@ -13,7 +13,7 @@
         color: $title-color;
         margin-bottom: 15px;
       }
-      ul.left-header__members {
+      .left-header__members {
         @include chat_member_size;
         color: $member-or-date-color;
         li {
