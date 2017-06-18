@@ -26,7 +26,7 @@
             .group__message
               aaaaaaaa
       .chat
-        .header
+        .chat__header
           .left-header
             .left-header__title
               aaa
@@ -34,7 +34,7 @@
               Member：
               %li.member
                 ttt
-          .right-header
+          .btn-edit
             %a.right-header__button
               Edit
         .messages
@@ -44,9 +44,8 @@
               .info__date 2017/06/02 04:30
             .text
               %p.text__content aaaaaaaa
-        .form
-          = form_tag do
-            %input.form__message{ type: 'text' , placeholder: 'type a message' }
-          .form__mask
+        .message-form
+          %input.message-form__message{type: 'text' , placeholder: 'type a message'}
+          .message-form__mask
             %i.fa.fa-picture-o.icon
-          = button_tag 'Send' , class: 'form__btn-submit' , type: :submit
+          %input.message-form__submit{type: 'submit' , value: 'Send'}

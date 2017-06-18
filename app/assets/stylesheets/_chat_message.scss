@@ -1,36 +1,31 @@
 .chat {
-  -webkit-width: calc(100vw - 300px);
-  width: calc(100vw - 300px);
-  .header {
+  @include chat_width;
+  &__header {
     background-color: $chat_header-color;
-    -webkit-height: 100px;
-    height: 100px;
+    @include header_height;
     padding: 0 40px;
     border: $chat-border-color;
     .left-header {
       margin: 35px 0 15px 0;
       display: inline-block;
       &__title {
-        -webkit-font-size: 20px;
-        font-size: 20px;
+        @include font_size_20;
         color: $title-color;
         margin-bottom: 15px;
       }
       ul.left-header__members {
-        -webkit-font-size: 12px;
-        font-size: 12px;
+        @include font_size_12;
         color: $member-or-date-color;
         li {
           display: inline-block;
         }
       }
     }
-    .right-header {
+    .btn-edit {
       border: 1px solid $btn-color;
       color: $btn-color;
       float: right;
-      height: 40px;
-      line-height: 40px;
+      @include btn-edit_height;
       margin-top: 28px;
       padding: 0 20px;
       &__button {
@@ -40,8 +35,7 @@
   }
   .messages {
     background-color: $messages-color;
-    -webkit-height: calc(100vh - 190px);
-    height: calc(100vh - 190px);
+    @include messages_height;
     padding: 0 40px;
     overflow: scroll;
     &__message {
@@ -49,28 +43,24 @@
       .info {
         &__user-name {
           display: inline-block;
-          -webkit-font-size: 16px;
-          font-size: 16px;
+          @include font_size_16;
           font-weight: bold;
           color: $user-name-message-color;
           margin-right: 10px;
         }
         &__date {
           display: inline-block;
-          -webkit-font-size: 12px;
-          font-size: 12px;
+          @include font_size_12;
           color: $member-or-date-color;
           margin-bottom: 10px;
         }
         p {
-          -webkit-font-size: 14px;
-          font-size: 14px;
+          @include font_size_14;
           color: $user-name-message-color;
         }
       }
       .text {
-        -webkit-font-size: 14px;
-        font-size: 14px;
+        @include font_size_14;
       }
     }
   }

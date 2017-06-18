@@ -1,0 +1,79 @@
+$set_prefix: -webkit-, -moz-, -ms-, -o-, '';
+@mixin form_height() {
+  @each $prefix in $set_prefix {
+    #{$prefix}height: 50px;
+  }
+}
+@mixin line_height() {
+  @each $prefix in $set_prefix {
+    #{$prefix}line-height: 50px;
+  }
+}
+@mixin font_size_20() {
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 20px;
+  }
+}
+@mixin font_size_16(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 16px;
+  }
+}
+@mixin font_size_15(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 15px;
+  }
+}
+@mixin font_size_14(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 14px;
+  }
+}
+@mixin font_size_12(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 12px;
+  }
+}
+@mixin font_size_11(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 11px;
+  }
+}
+@mixin chat_width(){
+  @each $prefix in $set_prefix {
+    #{$prefix}width: calc(100vw - 300px);
+  }
+}
+@mixin header_height(){
+  @each $prefix in $set_prefix {
+    #{$prefix}height: 100px;
+  }
+}
+@mixin header_line_height(){
+  @each $prefix in $set_prefix {
+    #{$prefix}line-height: 100px;
+  }
+}
+@mixin btn-edit_height(){
+  @each $prefix in $set_prefix {
+    #{$prefix}height: 40px;
+    #{$prefix}line-height: 40px;
+  }
+}
+@mixin messages_height(){
+  @each $prefix in $set_prefix {
+    #{$prefix}height: calc(100vh - 190px);
+  }
+}
+@mixin side_bar(){
+  @each $prefix in $set_prefix {
+    #{$prefix}width: 300px;
+    #{$prefix}height: 100vh;
+  }
+}
+@mixin groups(){
+  @each $prefix in $set_prefix {
+    #{$prefix}height: calc(100vh - 100px);
+    #{$prefix}overflow: scroll;
+  }
+}
