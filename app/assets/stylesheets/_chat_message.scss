@@ -1,38 +1,3 @@
-.chat {
-  @include chat_width;
-  &__header {
-    background-color: $chat_header-color;
-    @include header_height;
-    padding: 0 40px;
-    border: $chat-border-color;
-    .left-header {
-      margin: 35px 0 15px 0;
-      display: inline-block;
-      &__title {
-        @include font_size_20;
-        color: $title-color;
-        margin-bottom: 15px;
-      }
-      ul.left-header__members {
-        @include font_size_12;
-        color: $member-or-date-color;
-        li {
-          display: inline-block;
-        }
-      }
-    }
-    .btn-edit {
-      border: 1px solid $btn-color;
-      color: $btn-color;
-      float: right;
-      @include btn-edit_height;
-      margin-top: 28px;
-      padding: 0 20px;
-      &__button {
-        border-color: $btn-color;
-      }
-    }
-  }
   .messages {
     background-color: $messages-color;
     @include messages_height;
@@ -41,27 +6,22 @@
     &__message {
       padding: 46px 0 10px 0;
       .info {
+        margin-bottom: 10px;
         &__user-name {
           display: inline-block;
-          @include font_size_16;
+          @include user_name_size;
           font-weight: bold;
           color: $user-name-message-color;
           margin-right: 10px;
         }
         &__date {
           display: inline-block;
-          @include font_size_12;
           color: $member-or-date-color;
-          margin-bottom: 10px;
-        }
-        p {
-          @include font_size_14;
-          color: $user-name-message-color;
+          @include message_date_size;
         }
       }
       .text {
-        @include font_size_14;
+        @include chat_text_size;
       }
     }
   }
-}

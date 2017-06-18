@@ -8,7 +8,7 @@
     padding: 0 20px;
     &__name {
       display: inline-block;
-      @include font_size_16;
+      @include side_icon_size;
       font-weight: bold;
       color: $word-white;
     }
@@ -20,7 +20,7 @@
       }
       .icon {
         color: $word-white;
-        @include font_size_16;
+        @include side_icon_size;
         margin-left: 5px;
       }
     }
@@ -29,7 +29,7 @@
       float: right;
     }
   }
-  .groups {
+  .side-ber__groups {
     background-color: $groups-color;
     @include groups;
     padding: 0 20px;
@@ -37,11 +37,11 @@
       color: $word-white;
       padding: 20px 0 40px;
       &__name {
-        @include font_size_15;
+        @include group_name_size;
         margin-bottom: 5px;
       }
       &__message {
-        @include font_size_11;
+        @include group_message_size;
       }
     }
   }

@@ -3,11 +3,11 @@
   @include form_height;
   padding: 20px 50px 20px 40px;
   display: flex;
-  &__message {
+  &__text {
     @include form_height;
     width: 100%;
     padding: 0 10px;
-    @include font_size_16;
+    @include message_text_size;
     border: none;
   }
   &__mask {
@@ -16,7 +16,7 @@
     display: inline-block;
     padding-right: 10px;
     i {
-      @include font_size_20;
+      @include form_icon_size;
       @include line_height;
     }
   }
@@ -24,7 +24,7 @@
     background-color: $btn-color;
     border: none;
     color: $word-white;
-    @include font_size_16;
+    @include btn_size;
     @include form_height;
     margin-left: 15px;
     padding: 0 30px;

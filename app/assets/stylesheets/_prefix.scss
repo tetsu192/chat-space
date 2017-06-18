@@ -9,32 +9,57 @@ $set_prefix: -webkit-, -moz-, -ms-, -o-, '';
     #{$prefix}line-height: 50px;
   }
 }
-@mixin font_size_20() {
+@mixin form_icon_size() {
   @each $prefix in $set_prefix {
     #{$prefix}font-size: 20px;
   }
 }
-@mixin font_size_16(){
+@mixin chat_title_size() {
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 20px;
+  }
+}
+@mixin btn_size(){
   @each $prefix in $set_prefix {
     #{$prefix}font-size: 16px;
   }
 }
-@mixin font_size_15(){
+@mixin message_text_size(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 16px;
+  }
+}
+@mixin side_icon_size(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 16px;
+  }
+}
+@mixin user_name_size(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 16px;
+  }
+}
+@mixin group_name_size(){
   @each $prefix in $set_prefix {
     #{$prefix}font-size: 15px;
   }
 }
-@mixin font_size_14(){
+@mixin chat_text_size(){
   @each $prefix in $set_prefix {
     #{$prefix}font-size: 14px;
   }
 }
-@mixin font_size_12(){
+@mixin chat_member_size(){
   @each $prefix in $set_prefix {
     #{$prefix}font-size: 12px;
   }
 }
-@mixin font_size_11(){
+@mixin message_date_size(){
+  @each $prefix in $set_prefix {
+    #{$prefix}font-size: 12px;
+  }
+}
+@mixin group_message_size(){
   @each $prefix in $set_prefix {
     #{$prefix}font-size: 11px;
   }
