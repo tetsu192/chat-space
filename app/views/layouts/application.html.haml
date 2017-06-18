@@ -27,10 +27,10 @@
               aaaaaaaa
       .chat
         .chat__header
-          .left-header
-            .i.left-header__title
+          .chat__header--info
+            .i.chat__header--info__title
               aaa
-            %ul.left-header__members
+            %ul.chat__header--info__members
               Member：
               %li.member
                 ttt
@@ -45,7 +45,7 @@
             .message__text
               %p.text__content aaaaaaaa
         .message-form
-          %input.message-form__text{type: 'text' , placeholder: 'type a message'}
+          %input.message-form__text{ type: 'text' , placeholder: 'type a message' }
           .message-form__mask
             %i.fa.fa-picture-o.icon
-          %input.message-form__submit{type: 'submit' , value: 'Send'}
+          %input.message-form__submit{ type: 'submit' , value: 'Send' }
