@@ -1,0 +1,36 @@
+.chat{
+  @include chat_width;
+  &__header {
+    background-color: $chat_header-color;
+    @include header_height;
+    padding: 0 40px;
+    border: $chat-border-color;
+    .left-header {
+      margin: 35px 0 15px 0;
+      display: inline-block;
+      &__title {
+        @include chat_title_size;
+        color: $title-color;
+        margin-bottom: 15px;
+      }
+      ul.left-header__members {
+        @include chat_member_size;
+        color: $member-or-date-color;
+        li {
+          display: inline-block;
+        }
+      }
+    }
+    .btn-edit {
+      border: 1px solid $btn-color;
+      color: $btn-color;
+      float: right;
+      @include btn-edit_height;
+      margin-top: 28px;
+      padding: 0 20px;
+      &__button {
+        border-color: $btn-color;
+      }
+    }
+  }
+}
