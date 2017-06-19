@@ -5,7 +5,7 @@
     @include header_height;
     padding: 0 40px;
     border: $chat-border-color;
-    .left-header {
+    &--info {
       margin: 35px 0 15px 0;
       display: inline-block;
       &__title {
@@ -13,7 +13,7 @@
         color: $title-color;
         margin-bottom: 15px;
       }
-      .left-header__members {
+      &__members {
         @include chat_member_size;
         color: $member-or-date-color;
         li {
