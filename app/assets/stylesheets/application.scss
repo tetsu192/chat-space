@@ -1,9 +1,7 @@
-@import 'variables';
-@import 'prefix';
 @import 'reset';
-@import 'wrapper';
-@import 'flash';
-@import 'side_bar';
+@import './css/font-awesome.css';
+@import 'body';
+@import 'side-bar';
 @import 'chat_message';
 @import 'chat_form';
-@import 'chat_header';
+

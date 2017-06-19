@@ -5,7 +5,11 @@
     %title ChatSpace
     = stylesheet_link_tag  'application', media: 'all', data: { turbolinks: { track: true } }
     = javascript_include_tag 'application', data: {turbolinks: { track: true } }
-    %link{ href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}
+    %meta{ content: "text/html; charset=UTF-8", http: {equiv:content }/
+    %title ChatSpace
+    = stylesheet_link_tag    'application', media: 'all', data: { turbolinks: { track: true }}
+    = javascript_include_tag 'application', data: { turbolinks:{ track: true }}
+    = csrf_meta_tags
   %body
     .notification
       %p  チャットグループが作成されました。
@@ -19,33 +23,38 @@
               %i.fa.fa-cog.icon
             %li.list
               %i.fa.fa-pencil-square-o.icon
-        .side-bar__groups
+        .groups
           .group
             .group__name
               aaa
             .group__message
               aaaaaaaa
+          .group
+            .group__name
+              a
+            .group__message
+              まだメッセージはありません。
       .chat
-        .chat__header
+        .header
           .left-header
-            .i.left-header__title
+            .left-header__title
               aaa
             %ul.left-header__members
               Member：
               %li.member
                 ttt
-          .btn-edit
-            %a.btn-edit__button
+          .right-header
+            %a.right-header__button
               Edit
-        .chat__messages
+        .messages.js-messages
           .message
-            .info
-              .info__user-name ttt
-              .info__date 2017/06/02 04:30
-            .message__text
-              %p.text__content aaaaaaaa
-        .message-form
-          %input.message-form__text{type: 'text' , placeholder: 'type a message'}
-          .message-form__mask
+            .upper-message
+              .upper-message__user-name ttt
+              .upper-message__date 2017/06/02 04:30
+            .lower-message
+              %p.lower-message__content aaaaaaaa
+        .form
+          %input.form__message{type: 'text' , placeholder: 'type a message'}
+          .form__mask
             %i.fa.fa-picture-o.icon
-          %input.message-form__submit{type: 'submit' , value: 'Send'}
+          %input.form__submit{type: 'submit' , value: 'Send'}

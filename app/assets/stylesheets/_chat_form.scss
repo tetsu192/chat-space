@@ -1,31 +1,34 @@
-.message-form {
-  background-color: $chat_form-color;
-  @include form_height;
+.form {
+  background-color: #DDDDDD;
+  height: 50px;
+  bottom: 0px;
   padding: 20px 50px 20px 40px;
-  display: flex;
-  &__text {
-    @include form_height;
-    width: 100%;
+  &__message {
+    height: 50px;
+    width: calc(100% - 150px);
     padding: 0 10px;
-    @include message_text_size;
+    font-size: 16px;
+    float: left;
+    box-sizing: border-box;
     border: none;
   }
   &__mask {
-    @include form_height;
-    background-color: $picture-input-color;
+    height: 50px;
+    background-color: white;
     display: inline-block;
+    float: left;
     padding-right: 10px;
     i {
-      @include form_icon_size;
-      @include line_height;
+      font-size: 20px;
+      line-height: 50px;
     }
   }
   &__submit {
-    background-color: $btn-color;
+    background-color: #38AEF0;
     border: none;
-    color: $word-white;
-    @include btn_size;
-    @include form_height;
+    color: #fff;
+    font-size: 16px;
+    height: 50px;
     margin-left: 15px;
     padding: 0 30px;
   }
