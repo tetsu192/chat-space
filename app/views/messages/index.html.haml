@@ -8,7 +8,7 @@
         ttt
       %ul.header__lists
         %li.list
-          %a{ href: "/users/#{current_user.id}/edit" }
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog.icon
         %li.list
           %i.fa.fa-pencil-square-o.icon
