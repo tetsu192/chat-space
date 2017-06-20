@@ -8,7 +8,8 @@
         ttt
       %ul.header__lists
         %li.list
-          %i.fa.fa-cog.icon
+          %a{ href: "/users/#{current_user.id}/edit" }
+            %i.fa.fa-cog.icon
         %li.list
           %i.fa.fa-pencil-square-o.icon
     .side-bar__groups
