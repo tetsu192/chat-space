@@ -7,10 +7,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if  @user.update(user_params)
-  	  redirect_to controller: 'messages', action: :index
-  	  flash[:notice] = "アカウント情報を変更しました"
+  	  redirect_to root_path, notice: 'アカウント情報を変更しました'
   	else
-  	  flash.now[:alert] = "アカウント情報を入力してください"
+  	  flash.now[:alert] = 'アカウント情報を入力してください'
   	  render :edit
     end
   end
