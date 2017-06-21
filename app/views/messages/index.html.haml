@@ -5,10 +5,11 @@
   .side-bar
     .header
       %h3.header__name
-        ttt
+        = current_user.name
       %ul.header__lists
         %li.list
-          %i.fa.fa-cog.icon
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog.icon
         %li.list
           %i.fa.fa-pencil-square-o.icon
     .side-bar__groups
