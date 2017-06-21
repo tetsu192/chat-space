@@ -1,7 +1,10 @@
-.notification {
-  background-color: $btn-color;
+.flash {
+  color: $word-white;
   text-align: center;
-  p {
-    color: $word-white;
+  &__alert{
+    background-color: $flash-log_out-color;
+  }
+  &__notice {
+    background-color: $flash-sign_in-color;
   }
 }

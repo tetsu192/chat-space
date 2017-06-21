@@ -1,44 +1,42 @@
 %body
-.notification
-  %p  チャットグループが作成されました。
-.wrapper
-  .side-bar
-    .header
-      %h3.header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          = link_to edit_user_path(current_user) do
-            %i.fa.fa-cog.icon
-        %li.list
-          %i.fa.fa-pencil-square-o.icon
-    .side-bar__groups
-      .group
-        .group__name
-          aaa
-        .group__message
-          aaaaaaaa
-  .chat
-    .chat__header
-      .chat__header--info
-        .i.chat__header--info__title
-          aaa
-        %ul.chat__header--info__members
-          Member：
-          %li.member
-            ttt
-      .btn-edit
-        %a.btn-edit__button
-          Edit
-    .chat__messages
-      .message
-        .info
-          .info__user-name ttt
-          .info__date 2017/06/02 04:30
-        .message__text
-          %p.text__content aaaaaaaa
-    .message-form
-      %input.message-form__text{ type: 'text' , placeholder: 'type a message' }
-      .message-form__mask
-        %i.fa.fa-picture-o.icon
-      %input.message-form__submit{ type: 'submit' , value: 'Send' }
+  .wrapper
+    .side-bar
+      .header
+        %h3.header__name
+          = current_user.name
+        %ul.header__lists
+          %li.list
+            = link_to edit_user_path(current_user) do
+              %i.fa.fa-cog.icon
+          %li.list
+            %i.fa.fa-pencil-square-o.icon
+      .side-bar__groups
+        .group
+          .group__name
+            aaa
+          .group__message
+            aaaaaaaa
+    .chat
+      .chat__header
+        .chat__header--info
+          .i.chat__header--info__title
+            aaa
+          %ul.chat__header--info__members
+            Member：
+            %li.member
+              ttt
+        .btn-edit
+          %a.btn-edit__button
+            Edit
+      .chat__messages
+        .message
+          .info
+            .info__user-name ttt
+            .info__date 2017/06/02 04:30
+          .message__text
+            %p.text__content aaaaaaaa
+      .message-form
+        %input.message-form__text{ type: 'text' , placeholder: 'type a message' }
+        .message-form__mask
+          %i.fa.fa-picture-o.icon
+        %input.message-form__submit{ type: 'submit' , value: 'Send' }
