@@ -5,8 +5,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-  	redirect_to controller: 'messages', action: :index
+    @user = User.find(params[:id])
+    if  @user.update(user_params)
+  	  redirect_to controller: 'messages', action: :index
+  	  flash[:notice] = "アカウント情報を変更しました"
+  	else
+  	  flash.now[:alert] = "アカウント情報を入力してください"
+  	  render :edit
+    end
   end
 
   private
