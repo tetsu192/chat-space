@@ -5,7 +5,7 @@
   .side-bar
     .header
       %h3.header__name
-        ttt
+        = current_user.name
       %ul.header__lists
         %li.list
           = link_to edit_user_path(current_user) do
