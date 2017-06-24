@@ -4,7 +4,7 @@ ja:
     password: パスワード
     password_confirmation: パスワード確認
     group_id: グループ名
-    name: 名前
+    name: グループ名
   date:
     abbr_day_names:
     - 日
