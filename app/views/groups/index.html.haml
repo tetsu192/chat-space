@@ -12,13 +12,11 @@
             = link_to new_group_path do
               %i.fa.fa-pencil-square-o.icon
       .side-bar__groups
-        - @groups.each do |group|
-          - group.members.each do |member|
-            - if member.user_id == current_user.id
-              .group
-                .group__name
-                  #{member.group.name}
-                .group__message
-                  メッセージはありません。
+        - @members.each do |member|
+          .group
+            .group__name
+              #{ member.group.try(:name) }
+            .group__message
+              メッセージはありません。
     .chat
       .chat__messages
