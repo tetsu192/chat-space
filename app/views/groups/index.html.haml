@@ -12,10 +12,10 @@
             = link_to new_group_path do
               %i.fa.fa-pencil-square-o.icon
       .side-bar__groups
-        - @members.each do |member|
+        - @groups.each do |group|
           .group
             .group__name
-              #{ member.group.try(:name) }
+              #{ group.try(:name) }
             .group__message
               メッセージはありません。
     .chat

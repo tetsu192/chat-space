@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @members = Member.where(user_id: current_user.id)
+    @groups =current_user.groups
   end
 
   def new
