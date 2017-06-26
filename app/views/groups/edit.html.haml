@@ -1,5 +1,13 @@
 .chat-group-form
   %h1 チャットグループ編集
+  - if @group.errors.any?
+    .chat-group-form__errors
+      %h2
+        1件のエラーが発生しました。
+      -@group.errors.full_messages.each do |message|
+        %ul
+          %li
+            = message
   .chat-group-form__field
     = form_for @group do |f|
       .chat-group-form__field.clearfix

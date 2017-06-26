@@ -24,8 +24,11 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
-    @group.update(group_params)
-    redirect_to groups_path
+    if @group.update(group_params)
+      redirect_to groups_path, notice: 'グループを編集しました'
+    else
+      render :edit
+    end
   end
 
   private
