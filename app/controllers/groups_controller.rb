@@ -20,6 +20,9 @@ class GroupsController < ApplicationController
   def edit
     @group = Group.find(params[:id])
     @members = @group.members
+    if @members.find_by(user_id: current_user.id).blank?
+      redirect_to groups_path
+    end
   end
 
   def update
