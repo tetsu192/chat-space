@@ -5,6 +5,7 @@ ja:
     password_confirmation: パスワード確認
     group_id: グループ名
     name: グループ名
+    member: チャットメンバー
   date:
     abbr_day_names:
     - 日
