@@ -38,8 +38,10 @@
             .info__date 2017/06/02 04:30
           .message__text
             %p.text__content aaaaaaaa
-      .message-form
-        %input.message-form__text{ type: 'text' , placeholder: 'type a message' }
-        .message-form__mask
-          %i.fa.fa-picture-o.icon
-        %input.message-form__submit{ type: 'submit' , value: 'Send' }
+      = form_for [@group, @message] do |f|
+        .message-form
+          = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
+          .message-form__mask
+            %i.fa.fa-picture-o.icon
+          = f.submit :Send, class: 'message-form__submit'
+
