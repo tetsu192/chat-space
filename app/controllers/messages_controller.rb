@@ -20,6 +20,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.require(:message).permit(:text, :image, :group_id)
+    params.require(:message).permit(:text, :image)
   end
 end

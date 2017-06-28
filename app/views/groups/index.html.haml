@@ -13,10 +13,15 @@
               %i.fa.fa-pencil-square-o.icon
       .side-bar__groups
         - @groups.each do |group|
-          .group
-            .group__name
-              #{ group.try(:name) }
-            .group__message
-              メッセージはありません。
-    .chat
-      .chat__messages
+          = link_to group_messages_path(group)do
+            .group
+              .group__name
+                = group.try(:name)
+              .group__message
+                - if group.messages.last.blank?
+                  メッセージがありません
+                - elsif group.messages.last.text.blank?
+                  画像が投稿されています
+                - else
+                  = group.messages.last.text
+    .space
