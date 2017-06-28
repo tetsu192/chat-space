@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(message_params)
+    Message.create(text: message_params[:text], image: message_params[:image], user_id: current_user.id)
     redirect_to group_messages_url
   end
 
