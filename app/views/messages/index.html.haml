@@ -13,11 +13,17 @@
               %i.fa.fa-pencil-square-o.icon
       .side-bar__groups
         - @groups.each do |group|
-          .group
-            .group__name
-              #{ group.try(:name) }
-            .group__message
-              メッセージはありません。
+          = link_to group_messages_path(group)do
+            .group
+              .group__name
+                = group.try(:name)
+              .group__message
+                - if group.messages.last.blank?
+                  メッセージがありません
+                - elsif group.messages.last.text.blank?
+                  画像が投稿されています
+                - else
+                  = group.messages.last.text
     .chat
       .chat__header
         .chat__header--info
@@ -28,8 +34,8 @@
             - @members.each do |member|
               %li.member
                 = member.user.name
-        .btn-edit
-          %a.btn-edit__button
+        = link_to edit_group_path(@group) do
+          .btn-edit
             Edit
       .chat__messages
         - @messages.each do |message|
