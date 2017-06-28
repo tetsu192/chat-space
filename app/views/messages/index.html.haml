@@ -41,7 +41,7 @@
       = form_for [@group, @message] do |f|
         .message-form
           = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
-          .message-form__mask
+          = f.label :image, class: 'message-form__mask' do
             %i.fa.fa-picture-o.icon
+          = f.file_field :image, style: 'display:none'
           = f.submit :Send, class: 'message-form__submit'
-
