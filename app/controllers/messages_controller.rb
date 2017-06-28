@@ -10,8 +10,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(text: message_params[:text], image: message_params[:image], user_id: current_user.id)
-    redirect_to group_messages_url
+    @message = Message.new(text: message_params[:text], image: message_params[:image], user_id: current_user.id)
+    if @message.save
+      redirect_to group_messages_url
+    else
+      redirect_to group_messages_url, alert: 'メッセージを入力してください'
+    end
   end
 
   private
