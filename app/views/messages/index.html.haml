@@ -1,58 +1,34 @@
-%body
-  .wrapper
-    .side-bar
-      .header
-        %h3.header__name
-          = current_user.name
-        %ul.header__lists
-          %li.list
-            = link_to edit_user_path(current_user) do
-              %i.fa.fa-cog.icon
-          %li.list
-            = link_to new_group_path do
-              %i.fa.fa-pencil-square-o.icon
-      .side-bar__groups
-        - @groups.each do |group|
-          = link_to group_messages_path(group)do
-            .group
-              .group__name
-                = group.try(:name)
-              .group__message
-                - if group.messages.last.blank?
-                  メッセージがありません
-                - elsif group.messages.last.text.blank?
-                  画像が投稿されています
-                - else
-                  = group.messages.last.text
-    .chat
-      .chat__header
-        .chat__header--info
-          .i.chat__header--info__title
-            = @group.name
-          %ul.chat__header--info__members
-            Member：
-            - @members.each do |member|
-              %li.member
-                = member.user.name
-        = link_to edit_group_path(@group) do
-          .btn-edit
-            Edit
-      .chat__messages
-        - @messages.each do |message|
-          .message
-            .info
-              .info__user-name
-                = message.user.name
-              .info__date
-                = l message.created_at, format: :short
-            .message__text
-              %p.text__content
-                = message.text
-              = image_tag "#{message.image.url}"
-      = form_for [@group, @message] do |f|
-        .message-form
-          = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
-          = f.label :image, class: 'message-form__mask' do
-            %i.fa.fa-picture-o.icon
-          = f.file_field :image, style: 'display:none'
-          = f.submit :Send, class: 'message-form__submit'
+.wrapper
+  = render partial: 'side-bar'
+  .chat
+    .chat__header
+      .chat__header--info
+        .i.chat__header--info__title
+          = @group.name
+        %ul.chat__header--info__members
+          Member：
+          - @members.each do |member|
+            %li.member
+              = member.user.name
+      = link_to edit_group_path(@group) do
+        .btn-edit
+          Edit
+    .chat__messages
+      - @messages.each do |message|
+        .message
+          .info
+            .info__user-name
+              = message.user.name
+            .info__date
+              = l message.created_at, format: :short
+          .message__text
+            %p.text__content
+              = message.text
+            = image_tag "#{message.image.url}"
+    = form_for [@group, @message] do |f|
+      .message-form
+        = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
+        = f.label :image, class: 'message-form__mask' do
+          %i.fa.fa-picture-o.icon
+        = f.file_field :image, style: 'display:none'
+        = f.submit :Send, class: 'message-form__submit'

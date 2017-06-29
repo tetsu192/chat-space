@@ -1,27 +1,3 @@
-%body
-  .wrapper
-    .side-bar
-      .header
-        %h3.header__name
-          = current_user.name
-        %ul.header__lists
-          %li.list
-            = link_to edit_user_path(current_user) do
-              %i.fa.fa-cog.icon
-          %li.list
-            = link_to new_group_path do
-              %i.fa.fa-pencil-square-o.icon
-      .side-bar__groups
-        - @groups.each do |group|
-          = link_to group_messages_path(group)do
-            .group
-              .group__name
-                = group.try(:name)
-              .group__message
-                - if group.messages.last.blank?
-                  メッセージがありません
-                - elsif group.messages.last.text.blank?
-                  画像が投稿されています
-                - else
-                  = group.messages.last.text
-    .space
+.wrapper
+  = render partial: 'side-bar'
+  .space
