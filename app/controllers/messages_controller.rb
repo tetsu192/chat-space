@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
+  before_action :variable, only: :index
 
   def variable
     @group = Group.find(params[:group_id])
@@ -10,7 +11,6 @@ class MessagesController < ApplicationController
   end
 
   def index
-    variable
   end
 
   def create
