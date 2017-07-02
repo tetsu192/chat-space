@@ -1,28 +1,17 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :variable, only: :index
-
-  def variable
-    @group = Group.find(params[:group_id])
-    @groups = current_user.groups
-    @message = Message.new
-    @messages = @group.messages
-    @members = @group.members
-  end
+  before_action :set_index
 
   def index
   end
 
   def create
     @message = Message.new(text: message_params[:text], image: message_params[:image], user_id: current_user.id, group_id: params[:group_id])
-    if @message.save
-      variable
-      render :index
-    else
-      variable
+    unless @message.save
       flash.now[:alert] = 'メッセージを入力してください'
-      render :index
     end
+    @message  = Message.new
+    render :index
   end
 
   private
@@ -30,4 +19,13 @@ class MessagesController < ApplicationController
   def message_params
     params.require(:message).permit(:text, :image)
   end
+
+  def set_index
+    @group = Group.find(params[:group_id])
+    @groups = current_user.groups
+    @message = Message.new
+    @messages = @group.messages
+    @members = @group.members
+  end
+
 end
