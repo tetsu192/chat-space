@@ -24,7 +24,7 @@
           .message__text
             %p.text__content
               = message.text
-            = image_tag "#{message.image.url}"
+            = image_tag message.image
     = form_for [@group, @message] do |f|
       .message-form
         = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
