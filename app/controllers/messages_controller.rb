@@ -22,7 +22,7 @@ class MessagesController < ApplicationController
 
   def set_index
     @group = Group.find(params[:group_id])
-    @groups = current_user.groups.includes(:messages)
+    @groups = current_user.groups
     @message = Message.new
     @messages = @group.messages.includes(:user)
     @members = @group.members.includes(:user)
