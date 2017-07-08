@@ -213,7 +213,7 @@ DEPENDENCIES
   erb2haml
   font-awesome-rails
   haml-rails
-  html2haml
+  html2haml (= 2.2.0)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (>= 0.3.13, < 0.5)

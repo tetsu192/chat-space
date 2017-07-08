@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_index
+  before_action :set_index, only: [:index, :create]
 
   def index
   end
@@ -10,7 +9,7 @@ class MessagesController < ApplicationController
     unless @message.save
       flash.now[:alert] = 'メッセージを入力してください'
     end
-    @message  = Message.new
+    @message = Message.new
     render :index
   end
 
