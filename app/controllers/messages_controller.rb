@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(text: message_params[:text], image: message_params[:image], user_id: current_user.id, group_id: params[:group_id])
-    unless @message.save
+    @message = Message.new(message_params)
+    if !@message.save
       flash.now[:alert] = 'メッセージを入力してください'
     end
     @message = Message.new
@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:text, :image)
+    params.require(:message).permit(:text, :image).merge(user_id: current_user.id, group_id: params[:group_id])
   end
 
   def set_index

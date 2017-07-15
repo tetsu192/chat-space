@@ -6,6 +6,11 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def filename
+    time = Time.now
+    name = "#{time.strftime('%Y%m%d%H%M%S')}.#{file.extension}"
+  end
+
   storage :file
 
   def store_dir
