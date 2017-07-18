@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def filename
     time = Time.now
-    name = "#{time.strftime('%Y%m%d%H%M%S')}.#{file.extension}"
+    name = "#{time.strftime('%Y%m%d%H%M%S')}.#{file.extension}" if original_filename.present?
   end
 
   storage :file

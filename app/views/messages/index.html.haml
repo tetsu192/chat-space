@@ -14,17 +14,7 @@
         .btn-edit
           Edit
     .chat__messages
-      - @messages.each do |message|
-        .message
-          .info
-            .info__user-name
-              = message.user.name
-            .info__date
-              = l message.created_at, format: :short
-          .message__text
-            %p.text__content
-              = message.text
-            = image_tag message.image
+      = render partial: 'message', collection: @messages, as:'message'
     = form_for [@group, @message] do |f|
       .message-form
         = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'

@@ -1,0 +1,10 @@
+.message
+  .info
+    .info__user-name
+      = message.user.name
+    .info__date
+      = l message.created_at, format: :short
+  .message__text
+    %p.text__content
+      = message.text
+    = image_tag message.image
