@@ -14,7 +14,7 @@
         .btn-edit
           Edit
     .chat__messages
-      = render partial: 'message', collection: @messages, as:'message'
+      = render @messages
     = form_for [@group, @message] do |f|
       .message-form
         = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'

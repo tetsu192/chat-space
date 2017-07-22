@@ -10,4 +10,4 @@
         = link_to new_group_path do
           %i.fa.fa-pencil-square-o.icon
   .side-bar__groups
-    = render partial: 'group', collection: @groups, as: 'group'
+    = render @groups
