@@ -3,7 +3,7 @@
     .info__user-name
       = message.user.name
     .info__date
-      = l message.created_at, format: :short
+      = message.created_at.strftime('%y/%m/%d %H:%M')
   .message__text
     %p.text__content
       = message.text
