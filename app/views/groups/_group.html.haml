@@ -3,9 +3,4 @@
     .group__name
       = group.try(:name)
     .group__message
-      - if group.messages.last.blank?
-        メッセージがありません
-      - elsif group.messages.last.text.blank?
-        画像が投稿されています
-      - else
-        = group.messages.last.text
+      = latest_comment(group)
