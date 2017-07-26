@@ -5,17 +5,19 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.new(message_params)
-    if !message.save
+    message = current_user.messages.new(message_params)
+    if message.save
+      redirect_to group_messages_url
+    else
       flash.now[:alert] = 'メッセージを入力してください'
+      render :index
     end
-    render :index
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:text, :image).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:message).permit(:text, :image, :group_id).merge(group_id: params[:group_id])
   end
 
   def set_variables
