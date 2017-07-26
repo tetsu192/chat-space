@@ -1,24 +1,24 @@
-    .chat
-      .chat__header
-        .chat__header--info
-          .i.chat__header--info__title
-            aaa
-          %ul.chat__header--info__members
-            Member：
+.wrapper
+  = render partial: 'side-bar'
+  .chat
+    .chat__header
+      .chat__header--info
+        .i.chat__header--info__title
+          = @group.name
+        %ul.chat__header--info__members
+          Member：
+          - @members.each do |member|
             %li.member
-              ttt
+              = member.user.name
+      = link_to edit_group_path(@group) do
         .btn-edit
-          %a.btn-edit__button
-            Edit
-      .chat__messages
-        .message
-          .info
-            .info__user-name ttt
-            .info__date 2017/06/02 04:30
-          .message__text
-            %p.text__content aaaaaaaa
+          Edit
+    .chat__messages
+      = render @messages
+    = form_for [@group, @message] do |f|
       .message-form
-        %input.message-form__text{ type: 'text' , placeholder: 'type a message' }
-        .message-form__mask
+        = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
+        = f.label :image, class: 'message-form__mask' do
           %i.fa.fa-picture-o.icon
-        %input.message-form__submit{ type: 'submit' , value: 'Send' }
+        = f.file_field :image, style: 'display:none'
+        = f.submit :Send, class: 'message-form__submit'
