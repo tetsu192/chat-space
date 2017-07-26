@@ -45,11 +45,10 @@ group :development do
   gem 'html2haml'
   gem 'spring'
   gem 'bullet'
+  gem 'pry-rails'
 end
 
-gem 'pry-rails'
 gem 'haml-rails'
-gem 'erb2haml'
 gem 'font-awesome-rails'
 gem 'autoprefixer-rails'
 gem 'devise'
