@@ -2,31 +2,30 @@ require 'rails_helper'
 
 describe Message do
   describe '#create' do
+    let(:message) { build(:message) }
 
     context 'when a text exist' do
       it 'is valid with a text' do
-        message = build(:message, image: '')
+        message[:image] = ''
         expect(message).to be_valid
       end
     end
 
     context 'when an image exist' do
       it 'is valid with an image' do
-        message = build(:message, text: '')
+        message[:text] = ''
         expect(message).to be_valid
       end
     end
 
     context 'when a text and an image exist' do
       it 'is valid with a text and an image' do
-        message = build(:message)
         expect(message).to be_valid
       end
     end
 
     context 'when a text and an image are blank' do
       it 'is invalid without a text and an image' do
-        message = build(:message, text: '', image: '')
         message.valid?
         expect(message.errors[:text || :image]).to include('を入力してください。')
       end
