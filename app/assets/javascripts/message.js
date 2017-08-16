@@ -1,13 +1,22 @@
 $(function() {
+  function buildHTML(message){
+    var html = `<div class="message">
+                  <div class="info">
+                    <div class="info__user-name">${ message.user_name }
+                    </div>
+                    <div class="info__date">${ message.date }</div>
+                  </div>
+                  <div class="message__text">
+                    <p class="text__content">${ message.text }</p>
+                  </div>`
+    return html
+  }
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    var group_id = $('.group_id').val();
-    var fd = new FormData($('#new_message').get(0));
-    fd.append('text', $('message-form__text').val());
-    console.log(fd)
-
+    var fd = new FormData(this);
+    var href = window.location.href
     $.ajax({
-      url: '/groups/27/messages.json',
+      url: href,
       type: 'POST',
       dataType: 'json',
       data: fd,
@@ -15,14 +24,14 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      console.log("success");
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
+      var html = buildHTML(data);
+      $('.chat__messages').append(html)
+      $('.message-form__text').val('')
+      $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
 
+    })
+    .fail(function(data) {
+      alert("error");
+    });
   });
 });
