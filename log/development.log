@@ -22696,3 +22696,1543 @@ rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
   Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
   Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (97.5ms)
 DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+Started GET "/" for ::1 at 2017-08-16 23:31:54 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (68.9ms)
+  Rendered application/_side-bar.html.haml (160.2ms)
+  Rendered groups/index.html.haml within layouts/application (182.9ms)
+  Rendered layouts/_flash.html.haml (4.1ms)
+Completed 200 OK in 889ms (Views: 741.8ms | ActiveRecord: 85.5ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:31:56 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (2.2ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (23.3ms)
+  Rendered application/_side-bar.html.haml (42.8ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [17 times] (16.9ms)
+  Rendered messages/index.html.haml within layouts/application (131.0ms)
+  Rendered layouts/_flash.html.haml (1.9ms)
+Completed 200 OK in 196ms (Views: 175.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:32:12 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.8ms)
+  Rendered application/_side-bar.html.haml (25.2ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [17 times] (7.5ms)
+  Rendered messages/index.html.haml within layouts/application (53.3ms)
+  Rendered layouts/_flash.html.haml (2.6ms)
+Completed 200 OK in 86ms (Views: 76.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:32:18 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (3.1ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (22.5ms)
+  Rendered application/_side-bar.html.haml (31.8ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [17 times] (9.1ms)
+  Rendered messages/index.html.haml within layouts/application (63.1ms)
+  Rendered layouts/_flash.html.haml (1.9ms)
+Completed 200 OK in 165ms (Views: 154.0ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:32:22 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GZgwNUnePnnqj/Xs0S1N+s7zMQRlaMSGN8PXyZxuzFFEO5DgnDIr7r7LU/EdXp+uMWAU0tdEOnO6kBueDEPoww==", "message"=>{"text"=>"aaaa"}, "commit"=>"Send", "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaa', 5, 27, '2017-08-16 14:32:22', '2017-08-16 14:32:22')[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 302 Found in 16ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:32:22 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (20.3ms)
+  Rendered application/_side-bar.html.haml (35.6ms)
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [18 times] (9.4ms)
+  Rendered messages/index.html.haml within layouts/application (66.9ms)
+  Rendered layouts/_flash.html.haml (2.6ms)
+Completed 200 OK in 110ms (Views: 91.3ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:32:28 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nAFblyG+zfeVeNXT2vGMwKHJ0eBklCkq5XETvEA4hYbBovtC9FLYYME8c84Wgl6UXlr0Nta4199oIt/r0BWhFA==", "message"=>{"text"=>"ssss"}, "commit"=>"Send", "group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ssss', 5, 27, '2017-08-16 14:32:28', '2017-08-16 14:32:28')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:32:28 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (15.9ms)
+  Rendered application/_side-bar.html.haml (23.7ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [19 times] (10.0ms)
+  Rendered messages/index.html.haml within layouts/application (55.4ms)
+  Rendered layouts/_flash.html.haml (3.1ms)
+Completed 200 OK in 90ms (Views: 81.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:32:36 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (18.6ms)
+  Rendered application/_side-bar.html.haml (27.9ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [19 times] (9.3ms)
+  Rendered messages/index.html.haml within layouts/application (59.2ms)
+  Rendered layouts/_flash.html.haml (2.7ms)
+Completed 200 OK in 106ms (Views: 97.7ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:32:39 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3zLUu2H5b+usKG3SFr+/XUQCqjeBxXVEFshTcV1x7uyCkXRutBV6fPhsy8/azG0Ju5GP4TPpi7Gbm58mzVzKfg==", "message"=>{"text"=>"aaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaa', 5, 27, '2017-08-16 14:32:39', '2017-08-16 14:32:39')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (7.5ms)
+Completed 200 OK in 30ms (Views: 19.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:32:43 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.6ms)
+  Rendered application/_side-bar.html.haml (25.6ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [20 times] (10.5ms)
+  Rendered messages/index.html.haml within layouts/application (56.4ms)
+  Rendered layouts/_flash.html.haml (2.0ms)
+Completed 200 OK in 88ms (Views: 78.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:33:29 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (26.6ms)
+  Rendered application/_side-bar.html.haml (36.6ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [20 times] (17.4ms)
+  Rendered messages/index.html.haml within layouts/application (80.9ms)
+  Rendered layouts/_flash.html.haml (3.3ms)
+Completed 200 OK in 212ms (Views: 200.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:33:32 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WDyZDqvP86msZ3Kgpr/RzGiO4MJv/poA9CJB0TqEsLUFnznbfiPmPvgj1L1qzAOYlx3FFN3SZPV5cY2GqqmUJw==", "message"=>{"text"=>"aaaa"}, "commit"=>"Send", "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaa', 5, 27, '2017-08-16 14:33:32', '2017-08-16 14:33:32')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:33:32 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (15.4ms)
+  Rendered application/_side-bar.html.haml (24.2ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [21 times] (9.5ms)
+  Rendered messages/index.html.haml within layouts/application (57.1ms)
+  Rendered layouts/_flash.html.haml (2.7ms)
+Completed 200 OK in 91ms (Views: 82.5ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:33:36 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"odFm2c5ONmy5sCuARbyvvVWoCuvGl7NnpnbhAGnb1oT8csYMG6Ij++30jZ2Jz33pqjsvPXS7TZIrJS1X+fbyFg==", "message"=>{"text"=>"tttt"}, "commit"=>"Send", "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('tttt', 5, 27, '2017-08-16 14:33:36', '2017-08-16 14:33:36')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:33:36 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.6ms)
+  Rendered application/_side-bar.html.haml (26.6ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [22 times] (20.1ms)
+  Rendered messages/index.html.haml within layouts/application (72.7ms)
+  Rendered layouts/_flash.html.haml (2.7ms)
+Completed 200 OK in 108ms (Views: 97.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:33:44 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Si2V4lAZIM1THh4E2EbFHJdEC/co8UYDsWftea93icsXjjU3hfU1WgdauBkUNRdIaNcuIZrduPY8NCEuP1qtWQ==", "message"=>{"text"=>"eeeee"}, "commit"=>"Send", "group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('eeeee', 5, 27, '2017-08-16 14:33:44', '2017-08-16 14:33:44')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:33:44 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.5ms)
+  Rendered application/_side-bar.html.haml (27.2ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [23 times] (16.0ms)
+  Rendered messages/index.html.haml within layouts/application (71.5ms)
+  Rendered layouts/_flash.html.haml (3.4ms)
+Completed 200 OK in 112ms (Views: 103.2ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:33:47 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0j0QjiZWBhyRq18LcEKKfTwPoTkpw0A8HcHokkjLY1CPnrBb87oTi8Xv+Ra8MVgpw5yE75vvvsmQkiTF2OZHwg==", "message"=>{"text"=>"ssssss"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ssssss', 5, 27, '2017-08-16 14:33:47', '2017-08-16 14:33:47')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (1.4ms)
+Completed 200 OK in 23ms (Views: 11.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:33:48 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (16.2ms)
+  Rendered application/_side-bar.html.haml (29.2ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [24 times] (11.6ms)
+  Rendered messages/index.html.haml within layouts/application (65.5ms)
+  Rendered layouts/_flash.html.haml (3.6ms)
+Completed 200 OK in 99ms (Views: 90.1ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:33:51 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pRbJWS6VSpX+7/aukC0kfKhmkJp2VlxXaWfDFm4lSLb4tWmM+3lfAqqrULNcXvYoV/W1TMR6oqLkNA9B/ghsJA==", "message"=>{"text"=>"aaaaaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaaaaa', 5, 27, '2017-08-16 14:33:51', '2017-08-16 14:33:51')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (1.0ms)
+Completed 200 OK in 19ms (Views: 9.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:35:03 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (2.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (23.3ms)
+  Rendered application/_side-bar.html.haml (35.4ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [25 times] (11.1ms)
+  Rendered messages/index.html.haml within layouts/application (76.0ms)
+  Rendered layouts/_flash.html.haml (2.9ms)
+Completed 200 OK in 159ms (Views: 96.9ms | ActiveRecord: 16.4ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:35:08 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mplB2E0ihgDq+ZDfJQ+Pplr6dqowKD69VztxYa+8NwvHOuENmM6Tl769NsLpfF3ypWlTfIIEwEjaaL02P5ETmQ==", "message"=>{"text"=>"sssss"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('sssss', 5, 27, '2017-08-16 14:35:08', '2017-08-16 14:35:08')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.6ms)
+Completed 200 OK in 22ms (Views: 9.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:35:13 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (14.4ms)
+  Rendered application/_side-bar.html.haml (21.5ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [26 times] (11.2ms)
+  Rendered messages/index.html.haml within layouts/application (56.3ms)
+  Rendered layouts/_flash.html.haml (2.7ms)
+Completed 200 OK in 87ms (Views: 77.4ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:35:15 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lzs1qURndL1MUkw7Myfy1YAXveCmtn+fHEpC3FzKkixymJV8kYthKhgW6ib/VCCBf4SYNhSagWqRGY6LzOe2vg==", "message"=>{"text"=>"ssss"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ssss', 5, 27, '2017-08-16 14:35:15', '2017-08-16 14:35:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.6ms)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:35:28 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (19.3ms)
+  Rendered application/_side-bar.html.haml (29.9ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [27 times] (14.2ms)
+  Rendered messages/index.html.haml within layouts/application (89.3ms)
+  Rendered layouts/_flash.html.haml (2.8ms)
+Completed 200 OK in 175ms (Views: 114.3ms | ActiveRecord: 19.3ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:35:33 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jqLpqvJsLrK2jiv2p1I1FKYPPJ0iuXU5U+GMeZxCNcLTAUl/J4A7JeLKjetrIedAWZwZS5CVi8zeskAuDG8RUA==", "message"=>{"text"=>"ss"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ss', 5, 27, '2017-08-16 14:35:33', '2017-08-16 14:35:33')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (1.2ms)
+Completed 200 OK in 25ms (Views: 10.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:36:00 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (18.9ms)
+  Rendered application/_side-bar.html.haml (29.5ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [28 times] (15.2ms)
+  Rendered messages/index.html.haml within layouts/application (80.0ms)
+  Rendered layouts/_flash.html.haml (2.0ms)
+Completed 200 OK in 170ms (Views: 103.5ms | ActiveRecord: 19.3ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:36:03 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qgOi/qgg2zyJ0OYHBLPt0V62sztF+2gwV/NW3MubXJ/3oAIrfczOq92UQBrIwD+FoSWW7ffXlsXaoJqLW7Z4DQ==", "message"=>{"text"=>"rr"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('rr', 5, 27, '2017-08-16 14:36:03', '2017-08-16 14:36:03')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:36:09 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (19.0ms)
+  Rendered application/_side-bar.html.haml (26.9ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [29 times] (12.2ms)
+  Rendered messages/index.html.haml within layouts/application (63.1ms)
+  Rendered layouts/_flash.html.haml (3.7ms)
+Completed 200 OK in 100ms (Views: 91.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:36:15 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (16.9ms)
+  Rendered application/_side-bar.html.haml (26.1ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [29 times] (10.4ms)
+  Rendered messages/index.html.haml within layouts/application (68.7ms)
+  Rendered layouts/_flash.html.haml (2.4ms)
+Completed 200 OK in 160ms (Views: 90.7ms | ActiveRecord: 17.1ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:36:19 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ry7Ut6djrf+wopIohVhPxz1zBOAZiEdZ+Kz/qF+m59ryjXRico+4aOTmNDVJK52TwuAhNqukuax1/zP/z4vDSA==", "message"=>{"text"=>"aaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaa', 5, 27, '2017-08-16 14:36:19', '2017-08-16 14:36:19')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.0ms)
+
+
+  
+NameError (undefined local variable or method `message' for #<MessagesController:0x007feb4dbc4748>
+Did you mean?  @message):
+  
+app/controllers/messages_controller.rb:15:in `block (2 levels) in create'
+app/controllers/messages_controller.rb:14:in `create'
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (0.9ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.0ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (107.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+Started GET "/groups/27/messages" for ::1 at 2017-08-16 23:36:29 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (18.0ms)
+  Rendered application/_side-bar.html.haml (29.7ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [30 times] (12.9ms)
+  Rendered messages/index.html.haml within layouts/application (77.3ms)
+  Rendered layouts/_flash.html.haml (2.7ms)
+Completed 200 OK in 178ms (Views: 104.0ms | ActiveRecord: 24.3ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-16 23:36:32 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aoI1Ho4d7fJ0sUrtgkgyFAlN6n/vPekcwR7Rtjw8woA3IZXLW/H4ZSD17PBOO+BA9t7PqV0RF+lMTR3hrBHmEg==", "message"=>{"text"=>"aaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaa', 5, 27, '2017-08-16 14:36:32', '2017-08-16 14:36:32')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.7ms)
+Completed 200 OK in 23ms (Views: 10.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 03:19:37 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (14.5ms)
+  Rendered application/_side-bar.html.haml (22.9ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [31 times] (12.8ms)
+  Rendered messages/index.html.haml within layouts/application (59.7ms)
+  Rendered layouts/_flash.html.haml (2.1ms)
+Completed 200 OK in 92ms (Views: 82.6ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 03:19:41 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QloBcJhJF6GLpalCIVck99/T2lSmuB4Yy5koZstemW8qsjQF40xydJqMLjE9o7HIOxqv+C2Ho3ufaj2CwBe9w==", "message"=>{"text"=>"ううううううう"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ううううううう', 5, 27, '2017-08-16 18:19:41', '2017-08-16 18:19:41')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.7ms)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2017-08-17 11:08:50 +0900
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering groups/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (36.2ms)
+  Rendered application/_side-bar.html.haml (74.7ms)
+  Rendered groups/index.html.haml within layouts/application (81.7ms)
+  Rendered layouts/_flash.html.haml (2.9ms)
+Completed 200 OK in 225ms (Views: 158.3ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:08:53 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  Rendered application/_side-bar.html.haml (7.7ms)
+  Rendered messages/index.html.haml within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    10:         = link_to new_group_path do
+    11:           %i.fa.fa-pencil-square-o.icon
+    12:   .side-bar__groups
+    13:     = render @groups
+  
+app/views/application/_side-bar.html.haml:13:in `_app_views_application__side_bar_html_haml__2814185226160734331_70324331439500'
+app/views/messages/index.html.haml:2:in `_app_views_messages_index_html_haml__1098342324183320212_70324341124860'
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (103.4ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_tetsu__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___3059176844247164789_70324360266500 at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (96.6ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (216.9ms)
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:09:04 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (21.4ms)
+  Rendered application/_side-bar.html.haml (37.4ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [32 times] (13.5ms)
+  Rendered messages/index.html.haml within layouts/application (82.7ms)
+  Rendered layouts/_flash.html.haml (2.4ms)
+Completed 200 OK in 181ms (Views: 108.0ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:09:59 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (23.0ms)
+  Rendered application/_side-bar.html.haml (34.4ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  Rendered messages/index.html.haml within layouts/application (57.2ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 21.1ms)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    14:         .btn-edit
+    15:           Edit
+    16:     .chat__messages
+    17:       = render @messages
+    18:     = form_for [@group, @message] do |f|
+    19:       .message-form
+    20:         = f.text_field :text, placeholder: 'type a message', class: 'message-form__text'
+  
+app/views/messages/index.html.haml:17:in `_app_views_messages_index_html_haml__1098342324183320212_70324320795840'
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.2ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_tetsu__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___3059176844247164789_70324347345100 at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.8ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (204.9ms)
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:10:07 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.3ms)
+  Rendered application/_side-bar.html.haml (27.6ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [32 times] (12.7ms)
+  Rendered messages/index.html.haml within layouts/application (76.9ms)
+  Rendered layouts/_flash.html.haml (2.2ms)
+Completed 200 OK in 169ms (Views: 102.3ms | ActiveRecord: 19.8ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:10:25 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G/lQpT38SaNReY5Z5RSPf3q7FsZY4LCBunseTxOrX9ZGWvBw6BBcNAU9KEQpZ10rhSgzEOrMTnQ3KNIYg4Z7RA==", "message"=>{"text"=>"aaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaa', 5, 27, '2017-08-17 02:10:25', '2017-08-17 02:10:25')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.8ms)
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:14:48 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.7ms)
+  Rendered application/_side-bar.html.haml (28.7ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [33 times] (16.3ms)
+  Rendered messages/index.html.haml within layouts/application (77.2ms)
+  Rendered layouts/_flash.html.haml (2.3ms)
+Completed 200 OK in 160ms (Views: 101.4ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:15:03 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GB96xSBBESv+C5bF8zqxxvKx1GMagO1e0h7d/t07P5BFvNoQ9a0EvKpPMNg/SWOSDSLxtaisE6tfTRGpTRYbAg==", "message"=>{"text"=>"aaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaa', 5, 27, '2017-08-17 02:15:03', '2017-08-17 02:15:03')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.8ms)
+Completed 200 OK in 25ms (Views: 12.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:17:32 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (20.2ms)
+  Rendered application/_side-bar.html.haml (29.0ms)
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [34 times] (13.1ms)
+  Rendered messages/index.html.haml within layouts/application (66.9ms)
+  Rendered layouts/_flash.html.haml (3.2ms)
+Completed 200 OK in 218ms (Views: 206.3ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:17:37 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnnvudx+kLMfUPtLib/V+N9ybyq9KHwu8IF2DBpqfy6b2k9sCZKFJEsUXVZFzAesIOFK/A8Egtt90rpbikdbvA==", "message"=>{"text"=>"aaaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaaa', 5, 27, '2017-08-17 02:17:37', '2017-08-17 02:17:37')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.8ms)
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:17:40 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnnvudx+kLMfUPtLib/V+N9ybyq9KHwu8IF2DBpqfy6b2k9sCZKFJEsUXVZFzAesIOFK/A8Egtt90rpbikdbvA==", "message"=>{"text"=>"aaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaa', 5, 27, '2017-08-17 02:17:40', '2017-08-17 02:17:40')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.7ms)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:17:43 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnnvudx+kLMfUPtLib/V+N9ybyq9KHwu8IF2DBpqfy6b2k9sCZKFJEsUXVZFzAesIOFK/A8Egtt90rpbikdbvA==", "message"=>{"text"=>"aaaaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaaaa', 5, 27, '2017-08-17 02:17:43', '2017-08-17 02:17:43')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.9ms)
+Completed 200 OK in 23ms (Views: 11.0ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:17:47 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnnvudx+kLMfUPtLib/V+N9ybyq9KHwu8IF2DBpqfy6b2k9sCZKFJEsUXVZFzAesIOFK/A8Egtt90rpbikdbvA==", "message"=>{"text"=>"aaaaaaa"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('aaaaaaa', 5, 27, '2017-08-17 02:17:47', '2017-08-17 02:17:47')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.8ms)
+Completed 200 OK in 23ms (Views: 13.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:18:04 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnnvudx+kLMfUPtLib/V+N9ybyq9KHwu8IF2DBpqfy6b2k9sCZKFJEsUXVZFzAesIOFK/A8Egtt90rpbikdbvA==", "message"=>{"text"=>"eeee"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('eeee', 5, 27, '2017-08-17 02:18:04', '2017-08-17 02:18:04')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.7ms)
+Completed 200 OK in 25ms (Views: 12.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:19:05 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.9ms)
+  Rendered application/_side-bar.html.haml (31.9ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [39 times] (14.8ms)
+  Rendered messages/index.html.haml within layouts/application (89.7ms)
+  Rendered layouts/_flash.html.haml (2.5ms)
+Completed 200 OK in 189ms (Views: 121.1ms | ActiveRecord: 20.7ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:19:06 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R9aQpWZCnD+dYdCaYgeSFSpv2xbIDBsQTnP0gCStsRAadTBws66JqMkldoeudEBB1fz+wHog5eXDIDjXtICVgg==", "message"=>{"text"=>""}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 200 OK in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:19:41 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (15.0ms)
+  Rendered application/_side-bar.html.haml (23.5ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [39 times] (16.0ms)
+  Rendered messages/index.html.haml within layouts/application (64.3ms)
+  Rendered layouts/_flash.html.haml (2.0ms)
+Completed 200 OK in 162ms (Views: 153.3ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:19:43 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmTP+tNct1/hEocQ5xo28w2ZwC2jTXSouHyK3EZpL1cXx28vBrCiyLVWIQ0raeSn8grl+xFhil01L0aL1kQLxQ==", "message"=>{"text"=>""}, "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 200 OK in 7ms (ActiveRecord: 0.7ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:19:46 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmTP+tNct1/hEocQ5xo28w2ZwC2jTXSouHyK3EZpL1cXx28vBrCiyLVWIQ0raeSn8grl+xFhil01L0aL1kQLxQ==", "message"=>{"text"=>""}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 200 OK in 6ms (ActiveRecord: 0.6ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:19:50 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SmTP+tNct1/hEocQ5xo28w2ZwC2jTXSouHyK3EZpL1cXx28vBrCiyLVWIQ0raeSn8grl+xFhil01L0aL1kQLxQ==", "message"=>{"text"=>""}, "group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 200 OK in 7ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:19:52 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (17.9ms)
+  Rendered application/_side-bar.html.haml (25.9ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [39 times] (21.0ms)
+  Rendered messages/index.html.haml within layouts/application (78.1ms)
+  Rendered layouts/_flash.html.haml (2.3ms)
+Completed 200 OK in 112ms (Views: 101.3ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:19:58 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhRUof1FbV1ppZvPJXCVzfy0sce3iHnNBsfttwBH7HvLt/R0KKl4yj3hPdLpA0eZAyeUEQWkhziLlCHgkGrI6Q==", "message"=>{"text"=>"sssss"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('sssss', 5, 27, '2017-08-17 02:19:58', '2017-08-17 02:19:58')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.8ms)
+Completed 200 OK in 22ms (Views: 12.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:24:06 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhRUof1FbV1ppZvPJXCVzfy0sce3iHnNBsfttwBH7HvLt/R0KKl4yj3hPdLpA0eZAyeUEQWkhziLlCHgkGrI6Q==", "message"=>{"text"=>""}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 200 OK in 48ms (ActiveRecord: 6.8ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:27:35 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhRUof1FbV1ppZvPJXCVzfy0sce3iHnNBsfttwBH7HvLt/R0KKl4yj3hPdLpA0eZAyeUEQWkhziLlCHgkGrI6Q==", "message"=>{"text"=>"sss"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('sss', 5, 27, '2017-08-17 02:27:35', '2017-08-17 02:27:35')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.9ms)
+Completed 200 OK in 27ms (Views: 11.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:27:37 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhRUof1FbV1ppZvPJXCVzfy0sce3iHnNBsfttwBH7HvLt/R0KKl4yj3hPdLpA0eZAyeUEQWkhziLlCHgkGrI6Q==", "message"=>{"text"=>"sss"}, "group_id"=>"27"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('sss', 5, 27, '2017-08-17 02:27:37', '2017-08-17 02:27:37')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.9ms)
+Completed 200 OK in 25ms (Views: 10.6ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:27:39 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhRUof1FbV1ppZvPJXCVzfy0sce3iHnNBsfttwBH7HvLt/R0KKl4yj3hPdLpA0eZAyeUEQWkhziLlCHgkGrI6Q==", "message"=>{"text"=>""}, "group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/groups/27/messages
+Completed 200 OK in 11ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:37:42 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (22.0ms)
+  Rendered application/_side-bar.html.haml (38.5ms)
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [42 times] (19.8ms)
+  Rendered messages/index.html.haml within layouts/application (100.4ms)
+  Rendered layouts/_flash.html.haml (5.2ms)
+Completed 200 OK in 330ms (Views: 171.3ms | ActiveRecord: 68.2ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:37:47 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KyflgZpJzdNBTEp1qSNp5uP/p7pfpBkoNfhr44SHJxh2hEVUT6XYRBUI7GhlULuyHGyCbO2I5924q6e0FKoDig==", "message"=>{"text"=>"あああ"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('あああ', 5, 27, '2017-08-17 02:37:47', '2017-08-17 02:37:47')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.9ms)
+Completed 200 OK in 27ms (Views: 11.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/groups/27/messages" for ::1 at 2017-08-17 11:37:54 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"27"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 27 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [3 times] (19.6ms)
+  Rendered application/_side-bar.html.haml (32.2ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 27[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6)[0m
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [43 times] (23.6ms)
+  Rendered messages/index.html.haml within layouts/application (97.6ms)
+  Rendered layouts/_flash.html.haml (3.4ms)
+Completed 200 OK in 201ms (Views: 130.8ms | ActiveRecord: 18.8ms)
+
+
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:37:57 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g/oLuauAi8YmfTcKiXXCmyM1Qnjp+5hcN20dnp5qeWPeWatsfmyeUXI5kRdFBhDP3KZnrlvXZqm6PtHJDkdd8Q==", "message"=>{"text"=>"ああああ"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ああああ', 5, 27, '2017-08-17 02:37:57', '2017-08-17 02:37:57')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `redierct_to' for #<MessagesController:0x007feb52bd4cd8>
+Did you mean?  redirect_to):
+  
+app/controllers/messages_controller.rb:15:in `block (2 levels) in create'
+app/controllers/messages_controller.rb:14:in `create'
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (1.0ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.6ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (128.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+Started POST "/groups/27/messages" for ::1 at 2017-08-17 11:38:04 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g/oLuauAi8YmfTcKiXXCmyM1Qnjp+5hcN20dnp5qeWPeWatsfmyeUXI5kRdFBhDP3KZnrlvXZqm6PtHJDkdd8Q==", "message"=>{"text"=>"ああああ"}, "group_id"=>"27"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('ああああ', 5, 27, '2017-08-17 02:38:04', '2017-08-17 02:38:04')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (1.2ms)
+Completed 200 OK in 59ms (Views: 10.3ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/groups/new" for ::1 at 2017-08-17 11:44:05 +0900
+Processing by GroupsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendering groups/new.html.haml within layouts/application
+  Rendered groups/_error.html.haml (3.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered groups/_form.html.haml (36.5ms)
+  Rendered groups/new.html.haml within layouts/application (41.5ms)
+  Rendered layouts/_flash.html.haml (2.1ms)
+Completed 200 OK in 160ms (Views: 67.7ms | ActiveRecord: 30.2ms)
+
+
+Started POST "/groups" for ::1 at 2017-08-17 11:44:12 +0900
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lX3k1xXD+Foh0AfHFQs9zzBJ904rvnFq5h15maz3SQ7I3kQCwC/tzXWUodrZeO+bz9rSmJmSj59rTrXOPNptnA==", "group"=>{"name"=>"っっっっっk", "user_ids"=>["", "5", "6", "7"]}, "commit"=>"Save"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6, 7)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('っっっっっk', '2017-08-17 02:44:12', '2017-08-17 02:44:12')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `members` (`user_id`, `created_at`, `updated_at`) VALUES (5, '2017-08-17 02:44:12', '2017-08-17 02:44:12')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `members` (`user_id`, `created_at`, `updated_at`) VALUES (6, '2017-08-17 02:44:12', '2017-08-17 02:44:12')[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `members` (`user_id`, `created_at`, `updated_at`) VALUES (7, '2017-08-17 02:44:12', '2017-08-17 02:44:12')[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE `members` SET `group_id` = 33 WHERE `members`.`id` = 100[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `members` SET `group_id` = 33 WHERE `members`.`id` = 101[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `members` SET `group_id` = 33 WHERE `members`.`id` = 102[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.0ms)
+
+
+  
+NameError (undefined local variable or method `group' for #<GroupsController:0x007feb4c58a8b0>
+Did you mean?  @group):
+  
+app/controllers/groups_controller.rb:15:in `create'
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_tetsu__rbenv_versions_______lib_ruby_gems_______gems_web_console_______lib_web_console_templates_console_js_erb___3059176844247164789_70324345193560 at /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (111.0ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tetsu/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (225.6ms)
+Started POST "/groups" for ::1 at 2017-08-17 11:44:36 +0900
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lX3k1xXD+Foh0AfHFQs9zzBJ904rvnFq5h15maz3SQ7I3kQCwC/tzXWUodrZeO+bz9rSmJmSj59rTrXOPNptnA==", "group"=>{"name"=>"っっっっっk", "user_ids"=>["", "5", "6", "7"]}, "commit"=>"Save"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6, 7)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `groups` (`name`, `created_at`, `updated_at`) VALUES ('っっっっっk', '2017-08-17 02:44:36', '2017-08-17 02:44:36')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `members` (`user_id`, `created_at`, `updated_at`) VALUES (5, '2017-08-17 02:44:36', '2017-08-17 02:44:36')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `members` (`user_id`, `created_at`, `updated_at`) VALUES (6, '2017-08-17 02:44:36', '2017-08-17 02:44:36')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `members` (`user_id`, `created_at`, `updated_at`) VALUES (7, '2017-08-17 02:44:36', '2017-08-17 02:44:36')[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `members` SET `group_id` = 34 WHERE `members`.`id` = 103[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `members` SET `group_id` = 34 WHERE `members`.`id` = 104[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `members` SET `group_id` = 34 WHERE `members`.`id` = 105[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/34/messages
+Completed 302 Found in 71ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/groups/34/messages" for ::1 at 2017-08-17 11:44:36 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"34"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 34 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 33 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 34 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  Rendered collection of groups/_group.html.haml [5 times] (22.4ms)
+  Rendered application/_side-bar.html.haml (34.0ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 34[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6, 7)[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 34[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered messages/index.html.haml within layouts/application (49.6ms)
+  Rendered layouts/_flash.html.haml (2.1ms)
+Completed 200 OK in 97ms (Views: 70.2ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/groups/34/messages" for ::1 at 2017-08-17 11:44:43 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVBHfaYR24OqEPm9p+7bRYzhVSa574iu2QP9tPNpNYzs8+eoc/3OFP5UX6BrnQkRc3Jw8AvDdltUUDHjY0QRHg==", "message"=>{"text"=>"uuuuu"}, "group_id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('uuuuu', 5, 34, '2017-08-17 02:44:43', '2017-08-17 02:44:43')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.6ms)
+Completed 200 OK in 22ms (Views: 9.5ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/groups/34/messages" for ::1 at 2017-08-17 11:44:47 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVBHfaYR24OqEPm9p+7bRYzhVSa574iu2QP9tPNpNYzs8+eoc/3OFP5UX6BrnQkRc3Jw8AvDdltUUDHjY0QRHg==", "message"=>{"text"=>"oooooo"}, "group_id"=>"34"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`text`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES ('oooooo', 5, 34, '2017-08-17 02:44:47', '2017-08-17 02:44:47')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering messages/create.json.jbuilder
+  Rendered messages/create.json.jbuilder (0.6ms)
+Completed 200 OK in 20ms (Views: 10.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/groups/34/messages" for ::1 at 2017-08-17 11:44:58 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 34 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `members` ON `groups`.`id` = `members`.`group_id` WHERE `members`.`user_id` = 5[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 27], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 28 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 28], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 30 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 30], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 33 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 34 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 34 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 34], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 34 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 34], ["LIMIT", 1]]
+  Rendered collection of groups/_group.html.haml [5 times] (22.6ms)
+  Rendered application/_side-bar.html.haml (31.1ms)
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT `members`.* FROM `members` WHERE `members`.`group_id` = 34[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` IN (5, 6, 7)[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 34[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5[0m
+  Rendered collection of messages/_message.html.haml [2 times] (5.2ms)
+  Rendered messages/index.html.haml within layouts/application (68.2ms)
+  Rendered layouts/_flash.html.haml (2.1ms)
+Completed 200 OK in 98ms (Views: 89.3ms | ActiveRecord: 4.4ms)
+
+
