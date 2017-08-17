@@ -8,7 +8,9 @@ $(function() {
                   </div>
                   <div class="message__text">
                     <p class="text__content">${ message.text }</p>
-                  </div>`
+                    <img src="${ message.image.url }">
+                  </div>
+                </div>`
     return html;
   }
   $('#new_message').on('submit', function(e) {
@@ -27,6 +29,7 @@ $(function() {
       var html = buildHTML(data);
       $('.chat__messages').append(html);
       $('.message-form__text').val('');
+      $('.message-form__image').val('');
       $('.message-form__submit').removeAttr('disabled');
       $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
     })
