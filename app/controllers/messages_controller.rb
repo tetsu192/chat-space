@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redierct_to group_messages_path }
+        format.html { redirect_to group_messages_path }
         format.json
       end
     else
