@@ -9,12 +9,12 @@ $(function() {
                   <div class="message__text">
                     <p class="text__content">${ message.text }</p>
                   </div>`
-    return html
+    return html;
   }
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var fd = new FormData(this);
-    var href = window.location.href
+    var href = window.location.href;
     $.ajax({
       url: href,
       type: 'POST',
@@ -25,13 +25,14 @@ $(function() {
     })
     .done(function(data) {
       var html = buildHTML(data);
-      $('.chat__messages').append(html)
-      $('.message-form__text').val('')
+      $('.chat__messages').append(html);
+      $('.message-form__text').val('');
+      $('.message-form__submit').removeAttr('disabled');
       $('.chat__messages').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
-
     })
     .fail(function(data) {
       alert("error");
+      $('.message-form__submit').removeAttr('disabled');
     });
   });
 });
