@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :search, except: [:create, :update]
 
   def index
     @groups = current_user.groups
@@ -6,11 +7,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(10)
-    respond_to do |format|
-      format.html
-      format.json
-    end
   end
 
   def create
@@ -24,18 +20,16 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-    @members = @group.members
-    if @members.find_by(user_id: current_user.id).blank?
-      redirect_to groups_url
-    end
+    @members = @group.members.includes(:user).reject{|mem| mem.user_id == current_user.id } if @group.members.count >= 2
   end
 
   def update
     @group = Group.find(params[:id])
+    @members = @group.members.includes(:user).reject{|mem| mem.user_id == current_user.id } if @group.members.count >= 2
     if @group.update(group_params)
       redirect_to group_messages_url(@group), notice: 'グループを編集しました'
     else
-      render :edit
+      redirect_to edit_group_path(@group), flash: { error: @group.errors.full_messages }
     end
   end
 
@@ -43,6 +37,14 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, { user_ids: [] })
+  end
+
+  def search
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(10).reject{|mem| mem.id == current_user.id }
+    respond_to do |format|
+     format.html
+     format.json { render :search, format: [:jbuilder] }
+    end
   end
 
 end
