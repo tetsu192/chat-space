@@ -1,8 +1,7 @@
-- if @group.errors.any?
+- if flash[:error].present?
   .chat-group-form__errors
     %h2
       1件のエラーが発生しました。
-    -@group.errors.full_messages.each do |message|
-      %ul
-        %li
-          = message
+    %ul
+      %li
+        グループ名を入力してください
