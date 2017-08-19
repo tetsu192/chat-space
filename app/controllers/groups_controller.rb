@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  before_action :search, except: [:create, :update]
 
   def index
     @groups = current_user.groups
@@ -20,16 +19,20 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-    @members = @group.members.includes(:user).reject{|mem| mem.user_id == current_user.id } if @group.members.count >= 2
+    if @group.members.count != 1  #グループのメンバーが自分以外にも存在するとき
+      @members = @group.members.includes(:user).without_me(current_user.id)
+    end
   end
 
   def update
     @group = Group.find(params[:id])
-    @members = @group.members.includes(:user).reject{|mem| mem.user_id == current_user.id } if @group.members.count >= 2
+    if @group.members.count != 1  #グループのメンバーが自分以外にも存在するとき
+      @members = @group.members.includes(:user).without_me(current_user.id)
+    end
     if @group.update(group_params)
       redirect_to group_messages_url(@group), notice: 'グループを編集しました'
     else
-      redirect_to edit_group_path(@group), flash: { error: @group.errors.full_messages }
+      render :edit
     end
   end
 
@@ -37,14 +40,6 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, { user_ids: [] })
-  end
-
-  def search
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(10).reject{|mem| mem.id == current_user.id }
-    respond_to do |format|
-     format.html
-     format.json { render :search, format: [:jbuilder] }
-    end
   end
 
 end
