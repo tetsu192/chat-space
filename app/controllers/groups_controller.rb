@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.user_ids = [current_user.id]
   end
 
   def create
@@ -20,14 +19,16 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-    @members = @group.members
-    if @members.find_by(user_id: current_user.id).blank?
-      redirect_to groups_url
+    if @group.members.count != 1  #グループのメンバーが自分以外にも存在するとき
+      @members = @group.members.includes(:user).without_me(current_user.id)
     end
   end
 
   def update
     @group = Group.find(params[:id])
+    if @group.members.count != 1  #グループのメンバーが自分以外にも存在するとき
+      @members = @group.members.includes(:user).without_me(current_user.id)
+    end
     if @group.update(group_params)
       redirect_to group_messages_url(@group), notice: 'グループを編集しました'
     else

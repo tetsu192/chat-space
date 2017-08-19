@@ -59,3 +59,5 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'rake', '< 11.0'
+gem 'jquery-turbolinks'
+

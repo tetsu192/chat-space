@@ -1,8 +1,8 @@
 - if @group.errors.any?
   .chat-group-form__errors
     %h2
-      1件のエラーが発生しました。
-    -@group.errors.full_messages.each do |message|
+      #{ @group.errors.count }件のエラーが発生しました。
+    - @group.errors.full_messages.each do |message|
       %ul
         %li
           = message

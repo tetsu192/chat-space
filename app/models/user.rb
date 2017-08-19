@@ -8,4 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
+  scope :search_user, -> (key_word){where('name LIKE(?)', "%#{key_word}%").limit(10)}
+  scope :without_me, -> (current_user_id){ where("id != ?", current_user_id) }
+
 end
