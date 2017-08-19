@@ -16,7 +16,7 @@ $(function(){
 
     $.ajax({
       type: 'GET',
-      url: href,
+      url: '/users/search',
       data: { keyword: input },
       dataType: 'json'
     })
@@ -27,9 +27,12 @@ $(function(){
         listUsers(user);
       });
     })
-    .fail(function(){
-      alert('ユーザーを表示できません');
-    })
+    .fail(function(jqXHR) {
+      if (jqXHR.status == 500) {
+        document.head.innerHTML = "";
+        document.body.innerHTML = jqXHR.responseText;
+      }
+    });
   });
 
 //「追加」ボタンを押したときにリストから消える処理
