@@ -9,12 +9,15 @@
     padding: 0 10px;
     @include message_text_size;
     border: none;
+      content: "\f14a";
+  font-family: FontAwesome;
   }
   &__mask {
     @include form_height;
-    background-color: $picture-input-color;
+    background-color: none;
     display: inline-block;
     padding-right: 10px;
+    position: relative; right: 40px;
     i {
       @include form_icon_size;
       @include line_height;
