@@ -41,4 +41,26 @@ $(function() {
       $('.message-form__submit').removeAttr('disabled');
     });
   });
+  var interval = setInterval(function() {
+  if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+  $.ajax({
+    url: location.href.json,
+    dataType: 'json'
+  })
+  .done(function(data) {
+    var id = $('.message:last').data('message-id');
+    var insertHTML = '';
+    data.messages.forEach(function(message) {
+      if ( message.id > id || id == null ) {
+        insertHTML += buildHTML(message);
+      }
+    });
+    $('.chat__messages').append(insertHTML);
+  })
+  .fail(function(json) {
+    alert('自動更新に失敗しました');
+  });
+  } else {
+  clearInterval(interval);
+  }} , 5 * 1000 );
 });
