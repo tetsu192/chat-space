@@ -1,6 +1,10 @@
 $(function() {
   function buildHTML(message){
-    var html = `<div class="message">
+      var insertImage = '';
+      if (message.image.url) {
+        insertImage = `<img src="${ message.image.url }">`
+      }
+      var html = `<div class="message" data-message-id="${message.id}">
                   <div class="info">
                     <div class="info__user-name">${ message.user_name }
                     </div>
@@ -8,17 +12,16 @@ $(function() {
                   </div>
                   <div class="message__text">
                     <p class="text__content">${ message.text }</p>
-                    <img src="${ message.image.url }">
+                    <img src="${ insertImage }">
                   </div>
-                </div>`
-    return html;
+                </div>`;
+      return html;
   }
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    var fd = new FormData(this);
-    var href = window.location.href;
+    var fd = new FormData(this)
     $.ajax({
-      url: href,
+      url: window.location.href,
       type: 'POST',
       dataType: 'json',
       data: fd,
